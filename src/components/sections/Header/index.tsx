@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 
-import logo from '@/assets/img/icons/logo-header.svg';
+import Burger from '@/assets/img/icons/burger-white.svg';
+import Close from '@/assets/img/icons/close-white.svg';
+import logo from '@/assets/img/icons/logo-m-new.svg';
 
 import { Menu } from '../index';
 
@@ -30,12 +32,15 @@ const Header: React.FC = React.memo(() => {
           className={classNames('header-burger', { 'header-burger--active': isBurger })}
           onClick={() => setIsBurger(!isBurger)}
         >
-          <div className="header-burger__line header-burger__line--1" />
-          <div className="header-burger__line header-burger__line--2" />
-          <div className="header-burger__line header-burger__line--3" />
+          {isBurger ? (
+            <img src={Close} alt="close white icon" />
+          ) : (
+            <img src={Burger} alt="nav burger white" />
+          )}
         </div>
-        <div className="header-logo">
+        <div className="header__logo">
           <img src={logo} alt="logo" />
+          <div className="header__logo__title">BOTDEX</div>
         </div>
       </section>
       <div className={`menu-mob ${isBurger && 'menu-mob--active'}`}>

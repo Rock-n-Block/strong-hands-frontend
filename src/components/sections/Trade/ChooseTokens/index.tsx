@@ -2,8 +2,8 @@ import React from 'react';
 import { observer } from 'mobx-react-lite';
 
 import UnknownImg from '@/assets/img/currency/unknown.svg';
-import ArrowCImg from '@/assets/img/icons/arrow-circle.svg';
-import ArrowImg from '@/assets/img/icons/arrow-cur.svg';
+import ArrowCImg from '@/assets/img/icons/arrow-down-light-white.svg';
+import ArrowImg from '@/assets/img/icons/arrow-down-white.svg';
 import { Button, InputNumber } from '@/components/atoms';
 import { contracts } from '@/config';
 import { useWalletConnectorContext } from '@/services/MetamaskConnect';
@@ -344,7 +344,7 @@ const ChooseTokens: React.FC<IChooseTokens> = observer(
       async (type: 'from' | 'to') => {
         try {
           if (initialTokenData[type] && initialTokenData[type].token && user.address) {
-            let balance = '0';
+            let balance;
             if (initialTokenData[type].token?.symbol.toLowerCase() === 'bnb') {
               balance = await metamaskService.getEthBalance();
             } else {
@@ -414,7 +414,7 @@ const ChooseTokens: React.FC<IChooseTokens> = observer(
           {tokenFrom ? (
             <>
               <div className="box-f-jc-sb box-f choose-tokens__box-title">
-                <div className="text-upper text-black">{tokenFrom.symbol}</div>
+                <div className="text-upper text-white">{tokenFrom.symbol}</div>
                 <div className="text-sm text-gray">{textFrom || 'From'}</div>
               </div>
               <div className="box-f box-f-jc-sb">
@@ -461,7 +461,7 @@ const ChooseTokens: React.FC<IChooseTokens> = observer(
               colorScheme="gray"
               size="lmd"
             >
-              <span className="text-center text-black text-med">Select a Token</span>
+              <span className="text-center text-white text-med">Select a Token</span>
             </Button>
           )}
           <div className="choose-tokens__line box-f-ai-c">
@@ -480,7 +480,7 @@ const ChooseTokens: React.FC<IChooseTokens> = observer(
           {tokenTo ? (
             <>
               <div className="box-f-jc-sb box-f choose-tokens__box-title">
-                <div className="text-upper text-black">{tokenTo.symbol}</div>
+                <div className="text-upper text-white">{tokenTo.symbol}</div>
                 <div className="text-sm text-gray">{textTo || 'To'}</div>
               </div>
               <div className="box-f box-f-jc-sb">
@@ -525,7 +525,7 @@ const ChooseTokens: React.FC<IChooseTokens> = observer(
               colorScheme="gray"
               size="lmd"
             >
-              <span className="text-center text-black text-med">Select a Token</span>
+              <span className="text-center text-white text-med">Select a Token</span>
             </Button>
           )}
         </div>

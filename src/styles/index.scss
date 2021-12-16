@@ -12,10 +12,10 @@ body {
   height: max-content;
   min-height: 100vh;
 
-  font-family: Lato, sans-serif;
+  font-family: ReadexPro, sans-serif;
   font-weight: 400;
 
-  color: #000;
+  color: #fff;
 
   &.hide-scroll {
     overflow: hidden;
@@ -27,21 +27,24 @@ body {
 }
 
 #root {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  min-height: 100vh;
 }
 
 .ref-finance {
-  display: flex;
-  flex-direction: column;
   position: relative;
 
+  display: flex;
+  flex-direction: column;
+
   height: 100%;
-  flex-grow: 2;
 
   font-size: 16px;
   line-height: 19px;
+  flex-grow: 2;
+
   &__connect {
     @include b(tablet) {
       display: none !important;
@@ -54,6 +57,7 @@ body {
 
 main {
   flex-grow: 2;
+
   padding-left: 227px;
   @include b(tablet) {
     padding-top: 92px !important;
@@ -66,9 +70,11 @@ main {
   padding: 0 10px;
 
   max-width: 1120px;
+
   &-md {
     max-width: 990px;
   }
+
   &-sm {
     max-width: 705px;
   }
@@ -104,10 +110,10 @@ main {
 }
 
 .ScrollbarsCustom-Scroller {
-  padding-right: 25px !important;
   margin-right: -20px !important;
+  padding-right: 25px !important;
 }
 
 a:hover {
-  color: $black;
+  color: #fff;
 }

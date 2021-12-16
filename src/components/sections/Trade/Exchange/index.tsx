@@ -1,11 +1,11 @@
 import React from 'react';
 import { observer } from 'mobx-react-lite';
 
+import { useWalletConnectorContext } from '@/services/MetamaskConnect';
+import { useMst } from '@/store';
 import { clogError } from '@/utils/logger';
 
-import { useWalletConnectorContext } from '../../../../services/MetamaskConnect';
 import MetamaskService from '../../../../services/web3';
-import { useMst } from '../../../../store';
 import { ISettings, ITokens } from '../../../../types';
 import { Button } from '../../../atoms';
 import { ChooseTokens, TradeBox } from '..';

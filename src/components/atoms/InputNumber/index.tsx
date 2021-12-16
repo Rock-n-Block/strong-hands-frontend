@@ -20,7 +20,7 @@ const InputNumber: React.ForwardRefExoticComponent<IInputNumberProps> = React.me
   React.forwardRef<HTMLInputElement, IInputNumberProps>((props, ref) => {
     const {
       inputSize = 'lg',
-      colorScheme = 'gray',
+      colorScheme = 'gray-field',
       inputPrefix,
       className,
       inputClass,

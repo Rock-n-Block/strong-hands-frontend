@@ -4,8 +4,8 @@ import cn from 'classnames';
 
 import ArrowImg from '@/assets/img/icons/arrow-btn.svg';
 import InfoImg from '@/assets/img/icons/info.svg';
-import RecentTxImg from '@/assets/img/icons/recent-tx.svg';
-import SettingsImg from '@/assets/img/icons/settings.svg';
+import RecentTxImg from '@/assets/img/icons/recent-tx-white.svg';
+import SettingsImg from '@/assets/img/icons/settings-white.svg';
 
 import { Popover } from '../../../atoms';
 
@@ -32,18 +32,18 @@ const TradeBox: React.FC<ITradeBox> = ({
   info,
 }) => {
   return (
-    <div className={cn('trade-box box-shadow box-white', className)}>
+    <div className={cn('trade-box box-shadow box-dark-grey', className)}>
       <div className="trade-box__box-top box-f box-f-jc-sb">
         <div className="">
           {titleBackLink ? (
             <Link to="/trade/liquidity">
-              <div className={cn('trade-box__title text-md text-black text-med box-f-ai-c')}>
+              <div className={cn('trade-box__title text-md text-white text-bold box-f-ai-c')}>
                 <img src={ArrowImg} alt="" className="trade-box__back" />
                 <span>{title}</span>
               </div>
             </Link>
           ) : (
-            <div className={cn('trade-box__title text-md text-black text-med box-f-ai-c')}>
+            <div className={cn('trade-box__title text-md text-white text-bold box-f-ai-c')}>
               <span>{title}</span>
             </div>
           )}
@@ -52,8 +52,8 @@ const TradeBox: React.FC<ITradeBox> = ({
               <span>{subtitle}</span>
 
               {info ? (
-                <Popover content={<span className="text-med text text-black">{info}</span>}>
-                  <img src={InfoImg} alt="" />
+                <Popover content={<span className="text-med text text-gray">{info}</span>}>
+                  <img src={InfoImg} alt="info icon" />
                 </Popover>
               ) : (
                 ''

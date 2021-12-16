@@ -1,20 +1,16 @@
 @import '../../styles/mixins/media.scss';
 
 .trade {
-  padding-left: 0;
   padding-top: 90px;
+  padding-left: 0;
   padding-bottom: 90px;
-  background-image: url(../../assets/img/bg.png);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
+
+  background: $bg-color;
+
   &__content {
     padding: 10px;
-    max-width: 440px;
-    width: 100%;
-  }
 
-  @include b(extramobile) {
-    background-image: none;
+    width: 100%;
+    max-width: 440px;
   }
 }

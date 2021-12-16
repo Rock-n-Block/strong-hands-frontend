@@ -51,7 +51,7 @@ const Button: React.FC<ButtonProps> = React.memo(
     children,
     className,
     size = 'md',
-    colorScheme = 'yellow',
+    colorScheme = 'cold-blue',
     onClick,
     disabled = false,
     loading = false,
