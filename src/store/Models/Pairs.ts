@@ -60,10 +60,9 @@ const PairsModel = types
     getFormattedPoints(reversed = false) {
       return self.currentPairData.points.map((el) => {
         const currentTokenPrice =
-          +el[reversed ? 'reserve1' : 'reserve0'] /
-          +el[reversed ? 'reserve0' : 'reserve1'];
-        return [el.timestamp * 1000, currentTokenPrice]
-      })
+          +el[reversed ? 'reserve1' : 'reserve0'] / +el[reversed ? 'reserve0' : 'reserve1'];
+        return [el.timestamp * 1000, currentTokenPrice];
+      });
     },
 
     getFormattedCurrentPair(id: number, reversed = false) {

@@ -98,6 +98,6 @@ class Connector extends React.Component<any, any> {
 
 export default withRouter(Connector);
 
-export function useWalletConnectorContext() {
+export function useWalletConnectorContext(): any {
   return useContext(walletConnectorContext);
 }

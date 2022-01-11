@@ -76,11 +76,11 @@ const Button: React.FC<ButtonProps> = React.memo(
     };
 
     const BtnContent = (
-      <>
+      <div className="btn-content">
         {icon ? <img src={icon} alt="icon" className="btn-icon" /> : <></>}
         {children}
         {arrow ? <ArrowImg className="btn__arrow" /> : ''}
-      </>
+      </div>
     );
 
     const Btn = (

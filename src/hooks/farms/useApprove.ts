@@ -9,7 +9,7 @@ import { clogError } from '@/utils/logger';
 const masterRefinerContractAddress = getContractAddress('MASTER_REFINER');
 const gasOptions = { gas: 300000 };
 
-const useApproveFarm = (lpContract: Contract) => {
+const useApproveFarm = (lpContract: Contract): any => {
   const { callWithGasPrice } = useCallWithGasPrice();
   const handleApprove = useCallback(async () => {
     try {

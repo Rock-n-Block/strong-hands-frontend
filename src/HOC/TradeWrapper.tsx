@@ -157,7 +157,7 @@ const TradeWrapper = (
         this.setState({
           isApproving: false,
         });
-      } catch (err) {
+      } catch (err: any) {
         this.setState({
           isAllowanceFrom: false,
           isAllowanceTo: false,

@@ -4,8 +4,11 @@ import classNames from 'classnames';
 import './Information.scss';
 
 interface IInformationProps {
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   className?: string;
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   title?: string | React.ReactNode;
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   customClasses?: {
     title?: string;
     content?: string;

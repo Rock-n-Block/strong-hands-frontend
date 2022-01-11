@@ -7,7 +7,9 @@ import Input from '@/components/atoms/Input';
 interface ITitleFormProps {
   form: FormInstance;
   validateForms: () => void;
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   fieldClassName?: string;
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   inputClassName?: string;
 }
 

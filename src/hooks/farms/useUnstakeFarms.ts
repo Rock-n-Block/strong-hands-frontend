@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 import { useUnstakeFarm } from '@/hooks/farms/useUnstakeFarm';
 import { getContract } from '@/services/web3/contractHelpers';
 
-const useUnstakeFarms = (pid: number) => {
+const useUnstakeFarms = (pid: number): any => {
   const masterRefineryContract = getContract('MASTER_REFINER');
   const { unstakeFarm } = useUnstakeFarm(masterRefineryContract);
 

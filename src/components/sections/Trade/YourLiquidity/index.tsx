@@ -77,7 +77,7 @@ const YourLiquidity: React.FC<{ settings: ISettings }> = observer(({ settings })
                 setLiquidities((arr: any) => [...arr, data.user.liquidityPositions[i]]);
               }
             })
-            .catch((err) => {
+            .catch((err: any) => {
               clogError('check lp balance', err);
             });
         }

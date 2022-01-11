@@ -48,7 +48,7 @@ export const ApolloProvider: React.FC = ({ children }) => {
 
 export const getExchangeContext = (): IContextServiceName => ({
   context: { serviceName: ServicesEndpoints.rfExchange },
-})
+});
 
 export const getRfPairsContext = (): IContextServiceName => ({
   context: { serviceName: ServicesEndpoints.rfPairs },

@@ -5,6 +5,7 @@ import { observer } from 'mobx-react-lite';
 
 import UnknownImg from '@/assets/img/currency/unknown.svg';
 import OpenLinkImg from '@/assets/img/icons/open-link.svg';
+import { IS_PRODUCTION } from '@/config';
 import { useMst } from '@/store';
 import { IRecentTx } from '@/types';
 
@@ -12,7 +13,6 @@ import CrossImg from '../../../../assets/img/icons/cross-2.svg';
 import { Button, Popover } from '../../../atoms';
 
 import './RecentTxs.scss';
-import { IS_PRODUCTION } from '@/config';
 
 interface IRecentTxs {
   items?: IRecentTx[];

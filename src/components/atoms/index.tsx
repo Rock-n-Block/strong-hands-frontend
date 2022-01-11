@@ -5,6 +5,7 @@ export { default as InputNumber } from './InputNumber';
 export { default as Notification } from './Notification';
 export { default as Popover } from './Popover';
 export { default as RadioGroup } from './RadioGroup';
+// eslint-disable-next-line import/no-cycle
 export { default as Search } from './Search';
 export { default as Skeleton } from './Skeleton';
 export { default as Slider } from './Slider';

@@ -47,11 +47,11 @@ const Header: React.FC = observer(() => {
       </section>
       {!user.address ? (
         <Button className="connect" size="md" onClick={connect}>
-          <span className="text-bold text-white">Connect Wallet</span>
+          <span className="text-bold text-black">Connect Wallet</span>
         </Button>
       ) : (
         <Button className="connect" size="md" onClick={() => setWalletModalVisible(true)}>
-          <span className="text-bold text-white text-address">{user.address}</span>
+          <span className="text-bold text-black text-address">{user.address}</span>
         </Button>
       )}
       <div className={`menu-mob ${isBurger && 'menu-mob--active'}`}>

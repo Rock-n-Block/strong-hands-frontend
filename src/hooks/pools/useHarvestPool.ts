@@ -27,7 +27,7 @@ const useHarvestPoolDeposit = (smartRefinerInitContract: Contract) => {
   return { harvestPool };
 };
 
-const useHarvestPool = (poolId: number) => {
+const useHarvestPool = (poolId: number): any => {
   const { user, pools } = useMst();
 
   const [foundPool] = poolsConfig.filter((pool) => pool.id === poolId);
@@ -44,8 +44,8 @@ const useHarvestPool = (poolId: number) => {
     } else {
       await harvestPool();
     }
-    pools.updateUserPendingReward(poolId, user.address);
-    pools.updateUserBalance(poolId, user.address);
+    await pools.updateUserPendingReward(poolId, user.address);
+    await pools.updateUserBalance(poolId, user.address);
   }, [harvestFarm, harvestPool, poolId, pools, user.address]);
 
   return { onReward: handleHarvest };

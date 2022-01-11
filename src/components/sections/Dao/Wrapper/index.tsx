@@ -6,6 +6,7 @@ import { useScrollToTop } from '@/hooks/useScrollToTop';
 import './Wrapper.scss';
 
 interface IWrapperProps {
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   className?: string;
 }
 

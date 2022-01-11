@@ -4,8 +4,11 @@ import classNames from 'classnames';
 import './Section.scss';
 
 interface ISectionProps {
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   className?: string;
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   title?: string | React.ReactNode;
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   customClasses?: {
     root?: string;
     wrapper?: string;

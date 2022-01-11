@@ -8,8 +8,11 @@ import 'antd/lib/input/style/css';
 import './Input.scss';
 
 interface IInput extends InputProps {
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   colorScheme?: 'transparent' | 'outline';
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   inputSize?: 'sm' | 'md' | 'lg';
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   ref?: React.ForwardedRef<AntdInput>;
 }
 

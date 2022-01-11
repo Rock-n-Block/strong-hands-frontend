@@ -27,7 +27,7 @@ export const useBusdPriceFromPid = (pid: number): BigNumber => {
   return BIG_ZERO;
 };
 
-export const useLpTokenPrice = (symbol: string) => {
+export const useLpTokenPrice = (symbol: string): any => {
   const farm = useFarmFromLpSymbol(symbol);
   const farmTokenPriceInUsd = useBusdPriceFromPid(farm.pid);
   let lpTokenPrice = BIG_ZERO;

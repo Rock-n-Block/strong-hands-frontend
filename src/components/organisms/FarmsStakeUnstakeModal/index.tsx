@@ -104,7 +104,7 @@ const FarmsStakeUnstakeModal: React.FC = observer(() => {
   const handleStake = useCallback(async () => {
     try {
       await onStake(inputValueAsString);
-      farmsStore.fetchFarmUserDataAsync(user.address, [farmId]);
+      await farmsStore.fetchFarmUserDataAsync(user.address, [farmId]);
       successNotification('Staked!', 'Your funds have been staked in the farm!');
     } catch (error) {
       clogError(error);
@@ -120,7 +120,7 @@ const FarmsStakeUnstakeModal: React.FC = observer(() => {
   const handleUnstake = useCallback(async () => {
     try {
       await onUnstake(inputValueAsString);
-      farmsStore.fetchFarmUserDataAsync(user.address, [farmId]);
+      await farmsStore.fetchFarmUserDataAsync(user.address, [farmId]);
       successNotification('Unstaked!', 'Your earnings have also been harvested to your wallet!');
     } catch (error) {
       clogError(error);
@@ -155,13 +155,14 @@ const FarmsStakeUnstakeModal: React.FC = observer(() => {
     };
   }, [modal]);
 
-  const inputValueUsdToDisplay = useMemo(() => getTokenUsdPrice(inputValue, tokenUsdPrice), [
-    inputValue,
-    tokenUsdPrice,
-  ]);
-  const balanceToDisplay = useMemo(() => maxStakeUnstakeValueBN.toFixed(Precisions.shortToken), [
-    maxStakeUnstakeValueBN,
-  ]);
+  const inputValueUsdToDisplay = useMemo(
+    () => getTokenUsdPrice(inputValue, tokenUsdPrice),
+    [inputValue, tokenUsdPrice],
+  );
+  const balanceToDisplay = useMemo(
+    () => maxStakeUnstakeValueBN.toFixed(Precisions.shortToken),
+    [maxStakeUnstakeValueBN],
+  );
 
   const isNotEnoughBalanceToStake = maxStakeUnstakeValueRaw === '0';
   const hasValidationErrors = isNotEnoughBalanceToStake || inputValue.eq(0) || inputValue.isNaN();

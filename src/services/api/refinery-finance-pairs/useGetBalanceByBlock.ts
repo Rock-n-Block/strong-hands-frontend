@@ -60,7 +60,7 @@ interface IFetchUserBalanceByBlockResponse {
   }>;
 }
 
-export const fetchUserBalanceByBlock = (userAddress: string, block: number) => {
+export const fetchUserBalanceByBlock = (userAddress: string, block: number): any => {
   return apolloClient.query<IFetchUserBalanceByBlockResponse>({
     ...getRfPairsContext(),
     query: GET_BALANCE_BY_BLOCK,
@@ -74,7 +74,7 @@ export const fetchUserBalanceByBlock = (userAddress: string, block: number) => {
 export const fetchUserBalancesByBlock = async (
   addresses: string[],
   blocks: (number | string | null)[],
-) => {
+): Promise<any> => {
   const promises = addresses.map((address, index) => {
     // .toLowerCase() to prevent TheGraph's errors (it returns nothing when address is not in lowerCase)
     if (!blocks[index]) return Promise.resolve(null);
@@ -100,15 +100,14 @@ export const selectTotalUserBalancesByBlock = (
   results: Awaited<ReturnType<typeof fetchUserBalancesByBlock>>,
 ): IUserBalance[] => {
   return results
-    .map((item) => {
+    .map((item: any) => {
       if (item.status !== 'fulfilled') return undefined;
       const { value } = item;
       if (!value) return null;
       const [userData] = value.data.balanceHistories;
       return userData ? userData.User : null;
     })
-    .filter((item) => {
-      if (item) return true;
-      return false;
+    .filter((item: any) => {
+      return !!item;
     }) as IUserBalance[];
 };

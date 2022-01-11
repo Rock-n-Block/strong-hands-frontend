@@ -12,7 +12,9 @@ import './SortSelect.scss';
 const { Option } = AntdSelect;
 
 interface ISortSelect extends SelectProps<SelectValue> {
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   sortOptions?: string[];
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   label?: string;
 }
 

@@ -1,4 +1,4 @@
-import { GET_PAIR_INFO_BY_DATA, GET_PAIR_INFO_BY_DAY, GET_PAIRS } from '@/queries/pairs/index';
+import { GET_PAIR_INFO_BY_DATA, GET_PAIR_INFO_BY_DAY, GET_PAIRS } from '@/queries';
 import { apolloClient, getExchangeContext } from '@/services/apolloClient';
 
 type TPairResponseType = {
@@ -19,7 +19,7 @@ interface IGetPairsResponse {
 }
 
 export const useGetPair = () => {
-  return function (pairId: string) {
+  return (pairId: string): any => {
     return apolloClient
       .query<IGetPairsResponse>({
         ...getExchangeContext,
@@ -32,8 +32,8 @@ export const useGetPair = () => {
   };
 };
 
-interface IGetHoursPairsResponse{
-  pairHourDatas: Array<any>
+interface IGetHoursPairsResponse {
+  pairHourDatas: Array<any>;
 }
 
 /**
@@ -44,7 +44,7 @@ interface IGetHoursPairsResponse{
  * @returns
  */
 export const useGetHoursPairs = (orderBy = 'hourStartUnix', orderDir = 'desc') => {
-  return function (time: number, pairId: string) {
+  return (time: number, pairId: string): any => {
     return apolloClient
       .query<IGetHoursPairsResponse>({
         ...getExchangeContext,
@@ -60,8 +60,8 @@ export const useGetHoursPairs = (orderBy = 'hourStartUnix', orderDir = 'desc') =
   };
 };
 
-interface IGetDaysPairsResponse{
-  pairDayDatas: Array<any>
+interface IGetDaysPairsResponse {
+  pairDayDatas: Array<any>;
 }
 
 /**
@@ -72,7 +72,7 @@ interface IGetDaysPairsResponse{
  * @returns
  */
 export const useGetDaysPairs = (orderBy = 'date', orderDir = 'desc') => {
-  return function (time: number, pairId: string) {
+  return (time: number, pairId: string): any => {
     return apolloClient
       .query<IGetDaysPairsResponse>({
         ...getExchangeContext,

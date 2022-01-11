@@ -7,7 +7,9 @@ import { Modal } from '../../../molecules';
 import './BuyTicketsModal.scss';
 
 interface IBuyTicketsModal {
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   isVisible?: boolean;
+  // eslint-disable-next-line react/no-unused-prop-types,react/require-default-props
   handleClose?: () => void;
 }
 
